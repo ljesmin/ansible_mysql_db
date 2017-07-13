@@ -1,0 +1,4 @@
+  - name: create mysql database {{ mysql_database_name }}
+    mysql_db: name="{{ mysql_database_name }}" state=present
+  - name: create mysql user
+    mysql_user: name="{{ mysql_database_user }}" password="{{ mysql_database_password }}" priv={{mysql_database_name}}.*:ALL state=present
